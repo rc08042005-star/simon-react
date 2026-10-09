@@ -1,54 +1,94 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #222;
+  color: white;
+}
+
+.app {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-width: 375px;
 }
 
 header {
-  flex: 0 80px;
+  background-color: #111;
+  text-align: center;
+  padding: 15px;
+}
+
+header h1 {
+  margin: 10px;
+  font-size: 2.5rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav a:hover,
+nav a.active {
+  color: #00bfff;
 }
 
 main {
-  flex: 1 calc(100vh - 110px);
+  flex: 1;
+}
+
+.home {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.home form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+  gap: 15px;
+  max-width: 350px;
+  margin: 25px auto;
+}
+
+.home input {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.form-buttons button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.form-buttons button:hover {
+  background: #0056b3;
 }
 
 footer {
-  flex: 0 30px;
-}
-
-menu {
-  flex: 1;
-  display: flex;
-  /*  overwrite Bootstrap so the menu does not wrap */
-  flex-direction: row !important;
-  list-style: none;
-}
-
-.navbar-brand {
-  padding-left: 0.3em;
-  border-bottom: solid rgb(182, 182, 182) thin;
-}
-
-menu .nav-item {
-  padding: 0 0.3em;
-}
-
-footer a {
-  float: right;
-}
-
-@media (max-height: 600px) {
-  header {
-    display: none;
-  }
-  footer {
-    display: none;
-  }
-  main {
-    flex: 1 100vh;
-  }
+  text-align: center;
+  padding: 15px;
+  background-color: #111;
 }

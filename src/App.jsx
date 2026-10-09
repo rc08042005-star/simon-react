@@ -1,42 +1,21 @@
+import { Routes, Route, NavLink } from 'react-router-dom'
 
-import { Routes, Route, Link } from 'react-router-dom'
-
-function Home() {
-  return (
-    <main>
-      <h1>Welcome to Simon</h1>
-      <form>
-        <input type="email" placeholder="your@email.com" />
-        <input type="password" placeholder="password" />
-        <button type="button">Login</button>
-        <button type="button">Create</button>
-      </form>
-    </main>
-  )
-}
-
-function Play() {
-  return <main><h1>Play Simon</h1></main>
-}
-
-function Scores() {
-  return <main><h1>Simon Scores</h1></main>
-}
-
-function About() {
-  return <main><h1>About Simon</h1></main>
-}
+import Home from './Home.jsx'
+import Play from './Play.jsx'
+import Scores from './Scores.jsx'
+import About from './About.jsx'
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <header>
         <h1>Simon</h1>
+
         <nav>
-          <Link to="/">Home</Link> |{' '}
-          <Link to="/play">Play</Link> |{' '}
-          <Link to="/scores">Scores</Link> |{' '}
-          <Link to="/about">About</Link>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/play">Play</NavLink>
+          <NavLink to="/scores">Scores</NavLink>
+          <NavLink to="/about">About</NavLink>
         </nav>
       </header>
 
@@ -48,7 +27,7 @@ function App() {
       </Routes>
 
       <footer>
-        <p>Simon React</p>
+        <p>Simon React | CS 260</p>
       </footer>
     </div>
   )

@@ -1,6 +1,30 @@
-td {
-  max-width: 40vw;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+.scores-page {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #333;
+}
+
+.scores-page table {
+  width: 90%;
+  max-width: 800px;
+  margin: 30px auto;
+  border-collapse: collapse;
+}
+
+.scores-page th {
+  background-color: #111;
+  padding: 15px;
+}
+
+.scores-page td {
+  padding: 15px;
+  border-bottom: 1px solid #555;
+}
+
+.scores-page tr:nth-child(even) {
+  background-color: #444;
+}
+
+.scores-page tr:hover {
+  background-color: #555;
 }

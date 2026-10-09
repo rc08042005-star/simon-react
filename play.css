@@ -1,119 +1,113 @@
-#count {
-  color: rgb(246, 239, 158);
+.play-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  background-color: #333;
 }
 
 .players {
-  flex: 1;
-  width: 100%;
-  padding: 0.5em;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 18px;
 }
 
 .player-name {
-  color: rgb(118, 190, 210);
-}
-
-#player-messages {
-  padding-top: 0.25em;
-  opacity: 0.7;
-}
-
-.event {
-  color: rgb(69, 69, 69);
-}
-
-.player-event {
-  color: rgb(165, 220, 235);
-}
-
-.system-event {
-  color: rgb(221, 148, 40);
+  color: #00bfff;
+  margin-left: 5px;
 }
 
 .game {
-  background: rgb(0, 0, 0);
-  border-radius: 50%;
-  box-shadow: 0 0 20px 5px rgb(69, 69, 69);
-  width: 80vw;
-  height: 80vw;
-  position: absolute;
-  min-width: 350px;
-  min-height: 350px;
-  max-width: min(80vmin, 1000px);
-  max-height: min(80vmin, 1000px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button-container {
-  width: 100%;
-  height: 100%;
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  grid-template-rows: 1fr 1fr;
+  gap: 15px;
+  width: min(85vw, 500px);
+  height: min(85vw, 500px);
+  background: #111;
+  padding: 15px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.button-container > button:not(.reset-button) {
+  border: none;
+  cursor: pointer;
+  transition: filter 0.15s, brightness 0.15s;
 }
 
 .button-top-left {
+  background-color: #00b800;
   border-radius: 100% 0 0 0;
-  margin: 20px 0 0 20px;
-  background-color: green;
-  border: thick solid rgb(36, 53, 0);
 }
 
 .button-top-right {
+  background-color: #e00000;
   border-radius: 0 100% 0 0;
-  margin: 20px 20px 0 0;
-  background-color: red;
-  border: thick solid rgb(83, 12, 12);
 }
 
 .button-bottom-left {
+  background-color: #e6e600;
   border-radius: 0 0 0 100%;
-  margin: 0 0 20px 20px;
-  background-color: yellow;
-  border: thick solid rgb(130, 124, 13);
 }
 
 .button-bottom-right {
+  background-color: #0066ff;
   border-radius: 0 0 100% 0;
-  margin: 0 20px 20px 0;
-  background-color: blue;
-  border: thick solid rgb(27, 14, 100);
+}
+
+.button-container > button.lit {
+  filter: brightness(1.8);
 }
 
 .controls {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #222;
+  width: 42%;
+  height: 42%;
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  background-color: black;
-  padding: 2em;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  z-index: 2;
 }
 
 .game-name {
-  font-size: 2em;
+  font-size: clamp(20px, 4vw, 35px);
   font-weight: bold;
-  margin-bottom: 0.5em;
 }
 
 .score {
-  position: absolute;
-  text-align: center;
-  font-size: 20px;
-  font-family: monospace;
-  font-weight: bold;
+  background: #430000;
   color: red;
-  cursor: default;
-  width: 50px;
-  height: 30px;
-  border-radius: 10px;
-  border: solid thin rgb(117, 0, 0);
-  background-color: #300;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-size: 22px;
 }
 
-.center {
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+.reset-button {
+  background-color: #007bff;
+  color: white;
+  padding: 7px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.game-message {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 18px;
 }
